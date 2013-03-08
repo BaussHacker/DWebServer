@@ -1,0 +1,52 @@
+﻿This project was made by BaussHacker:
+http://www.hackforums.net/member.php?action=profile&uid=522041
+
+There has been no 3rd party codes or anything involved with this project.
+The whole webserver has been coded from scratch!
+
+This is not a serious project and was just a fun project.
+
+Thanks to Eight for support:
+http://www.hackforums.net/member.php?action=profile&uid=537025
+
+I want to say this is not intended for a real webserver as it was just a fun project and I've learned a lot from it!
+
+########################################################################################################################################################################
+########################################################################################################################################################################
+########################################################################################################################################################################
+########################################################################################################################################################################
+########################################################################################################################################################################
+########################################################################################################################################################################
+########################################################################################################################################################################
+########################################################################################################################################################################
+########################################################################################################################################################################
+The folder "pages" is used to manage code-behind for pages.
+Please use the current pages as reference how they work.
+
+Each page should have its own file and module to remain a proper structure.
+To make the code-behind work, you'll need to add it in master.d
+It has to be added here:
+	switch (requestpage)
+	{
+		// ADD PAGE HERE
+		
+The website is located in the www folder found in the output folder.
+A webpage is associated with 2 files. PAGE_NAME.d.body and PAGE_NAME.d.head where the body file is for the html body and the head file is for the html head.
+
+Each pages is associated with the masterpage as well. To edit the html of the masterpage edit master.d.master in the www folder.
+@body represents the location of the body data parsed from each file.
+@head represents the location of the head data parsed from each file.
+
+You can also redirect users using code-behind. There is an example using querystring in redirect.d
+Basically you call session.Redirect() which takes a string parameter as the url. It could be a another page or a whole new site ex. http://google.com/
+
+To use url-rewriting ex. http://127.0.0.1/index/ just remove the d extension from both the body and head file. And when referring in master.d also remove the d extension (If you want code-behind)
+
+The webserver supports the following feautres:
+Simple postdata
+Querystring
+Url-redirecting
+Url-rewriting (Does not support forward-slash at the end atm. easy fix though, just cba atm.)
+Images
+Masterpage
+Code-behind (Compiled...)
